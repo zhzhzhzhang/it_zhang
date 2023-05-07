@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <input type="text" oninput="fn1()" />
+  <div></div>
+  <body>
+    <script>
+      //   let data = "_________num_ab_cv__";
+      let fn = (s) => {
+        var a = s.split("_");
+        console.log(a);
+        //去除空字符串
+        ff = a.filter((val) => {
+          return val != "";
+        });
+        console.log(ff);
+        var result = a[0];
+        for (var i = 1; i < a.length; i++) {
+          result = result + a[i].slice(0, 1).toUpperCase() + a[i].slice(1);
+        }
+        return result;
+      };
+      //   console.log(fn(data));
+      let fn1 = () => {
+        val = document.querySelector("input");
+        let zhong = fn(val.value);
+        document.querySelector("div").innerHTML = zhong;
+      };
+    </script>
+  </body>
+</html>
